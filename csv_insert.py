@@ -40,8 +40,9 @@ rec_id = collection.insert_one(emp_rec)
 
 with open('movies.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
-   
+#   Skip the header line of the CSV file
+    next(csv_reader)    
+    line_count = 0   
     for row in csv_reader:
         name = row[8]
         desc = row[9]
